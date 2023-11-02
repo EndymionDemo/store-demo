@@ -1,0 +1,100 @@
+body{
+  background-color: transparent!important;
+}
+
+.frame {
+  width: 80rem;
+  height: 60rem;
+}
+
+.frame.red {
+  border: 0.5rem solid #C00000;
+  box-shadow: 0 0 3rem rgba(192, 0, 0, 0.5), 0 0 4rem rgba(192, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+.frame.green {
+  border: 0.5rem solid #00B050;
+  box-shadow: 0 0 3rem rgba(0, 176, 80, 0.5), 0 0 4rem rgba(0, 176, 80, 0.5);
+  box-sizing: border-box;
+}
+
+.product-component {
+  width: 80rem;
+  height: 15.5rem;
+  background-color: white;
+  border-radius: 10rem;
+  margin-top: 5rem;
+  align-items: center;
+  justify-content: space-between;
+  border: 0.5rem solid #557FCA;
+  box-shadow: 0 0 3rem rgba(85, 127, 202, 0.5), 0 0 4rem rgba(85, 127, 202, 0.5);
+  padding: 2rem;
+  display: inline-flex;
+  box-sizing: border-box;
+}
+
+.label-quantity {
+  font-size: 7rem;
+  text-align: center;
+  font-weight: bold;
+  color: #557FCA;
+  border-radius: 10rem;
+  padding: 1.5rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+}
+
+.label-quantity.green {
+  background-color: #00B050;
+  color: white;
+}
+
+.label-quantity.red {
+  background-color: #C00000;
+  color: white;
+}
+
+.price {
+  font-size: 7rem;
+  font-weight: bold;
+  border-radius: 10rem;
+  background-color: #557FCA;
+  color: white;
+  margin-right: 2rem;
+  padding: 1.5rem;
+}
+
+.remove {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: #557FCA;
+  color: white;
+  font-weight: bold;
+  font-size: 10rem;
+  cursor: pointer;
+  border: 1px solid #557FCA;
+  line-height: 5rem;
+}
+
+.remove.active {
+  background-color: lightgray;
+}
+
+.add {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  background-color: #557FCA;
+  color: white;
+  font-weight: bold;
+  font-size: 10rem;
+  cursor: pointer;
+  border: 1px solid #557FCA;
+  line-height: 5rem;
+}
+
+.add.active {
+  background-color: lightgray;
+}

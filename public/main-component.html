@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Store</title>
+    <base href="/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="transparent" content="true" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="endymion.js"></script>
+    <script src="main.js"></script>
+    <link rel="stylesheet" type="text/css" href="main.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="icona">
+        <img src="shopping-icon.png" alt="Icona" />
+      </div>
+      <div class="div-a-scomparsa">
+        <ul class="tab">
+          <li class="attivo"><button tab-id="lista-della-spesa">Lista della spesa</button></li>
+          <li><button tab-id="carrello">Carrello</button></li>
+        </ul>
+        <div class="contenuto">
+          <div id="lista-della-spesa">
+            <h2>Lista della spesa</h2>
+            <ul>
+              <li>Prodotto 1</li>
+              <li>Prodotto 2</li>
+              <li>Prodotto 3</li>
+            </ul>
+          </div>
+          <div id="carrello">
+            <h2>Carrello</h2>
+            <ul>
+              <li>Prodotto 1</li>
+              <li>Prodotto 2</li>
+              <li>Prodotto 3</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p class="client"></p>
+  </body>
+</html>
