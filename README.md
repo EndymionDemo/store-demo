@@ -1,5 +1,5 @@
 
-# Cube Demo 2
+# Store Demo
 
 AR cube (and other object) positionig, painting and animate example using Endymion AR library
 
