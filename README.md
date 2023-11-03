@@ -60,9 +60,31 @@ To stop demo
 In public folder there are 10 files        
 
 
-Lets explore index.html
+Lets explore product.html
 ```html
-
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Store</title>
+      <base href="/">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="transparent" content="true">
+      <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+      <script src="endymion.js"></script>
+      <script src="product.js"></script>
+      <link rel="stylesheet" type="text/css" href="product.css">
+</head>
+  <body>
+    <div class="frame" style="display: none;"></div>
+    <div class="product-component">
+      <label class="price" data-currency="EUR">0</label>
+      <button class="remove">&minus;</button>
+      <label class="label-quantity"><span class="quantity">0</span> di <span class="requisite">0</span></label>
+      <button class="add">&plus;</button>
+    </div>
+    <p class="client"></p>
+  </body>
+</html>
 ```
 
 

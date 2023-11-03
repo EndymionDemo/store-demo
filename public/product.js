@@ -102,6 +102,10 @@ window.onload = function() {
             frame.classList.remove('green');
             frame.classList.add('red');
 
+            endymion.with(quad)
+            .setColor(rgba(192, 0, 0, 0.3))
+            .apply();
+
             console.debug('error');
         }
         else if(response.data.quantity == response.data.requisite){
@@ -111,6 +115,10 @@ window.onload = function() {
             frame.classList.remove('red');
             frame.classList.add('green');
 
+            endymion.with(quad)
+            .setColor(rgba(0, 176, 80, 0.3))
+            .apply();
+
             console.debug('valid');
         }
     };
@@ -118,10 +126,18 @@ window.onload = function() {
     function addActiveClass() {
         // Aggiungi la classe 'active'
         this.classList.add('active');
-      }
-      
-      function removeActiveClass() {
-        // Rimuovi la classe 'active'
-        this.classList.remove('active');
-      }
-  };
+    };
+    
+    function removeActiveClass() {
+    // Rimuovi la classe 'active'
+    this.classList.remove('active');
+    };
+
+    const quad = endymion.quad()
+        .setScale({x:-2.5, y:-2.5, z:-2.5})
+        .setPosY(2.0)
+        .render();
+    /* endymion.with(quad)
+        .setColor(rgba(255,0,0,0.1))
+        .apply(); */
+};

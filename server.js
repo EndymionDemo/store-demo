@@ -81,7 +81,7 @@ app.get('/api/product', function(req, res) {
 
   // Rispondi alla richiesta
   quantity = 0;
-  var data = {price: '44,99 €', quantity: quantity, requisite: 2};
+  var data = {price: '4,99 €', quantity: quantity, requisite: 2};
   res.send(data);
 });
 
