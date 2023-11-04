@@ -10,7 +10,7 @@ const ip = myLocalIP();
 const app = express();
 console.log(ip);
 
-qrcode.generate('https://smpt-agriverse.eu.ngrok.io/product.html?id=884912268372', {small: true})
+qrcode.generate('http://' + ip + ':8080', {small: true})
 
 app.use(cookieParser());
 app.use(express.static('public')); // Serve i file statici dalla cartella 'public'
