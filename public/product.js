@@ -9,9 +9,23 @@ window.onload = function() {
     const client = document.querySelector('p.client');
 
     console.log(document.cookie);
-    let id = document.cookie.replace(/(?:(?:^|.*;\s*)id\s*\=\s*([^;]*).*$)|^.*$/, "$1");
-    let clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    const id = document.cookie.replace(/(?:(?:^|.*;\s*)id\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    const clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     client.textContent = "clientId: " + clientId;
+
+    /* window.addEventListener('message', function(event) {
+        if (event.data === 'show') {
+            // Esegui il tuo codice qui
+        }
+        console.log(event);
+        axios.post('/api/log/postmessage', event)
+        .then(response => {
+            console.log(response);
+        })
+        .catch(function (error) {
+            console.error(error);
+        });
+    }); */
   
     // Carica il prezzo e la quantità iniziali
     axios.get('/api/product', {
@@ -21,7 +35,7 @@ window.onload = function() {
         }
     })
     .then(response => {
-        priceLabel.textContent = response.data.price;
+        priceLabel.textContent = toCurrency(response.data.price);
         quantityLabel.textContent = response.data.quantity;
         requisiteLabel.textContent = response.data.requisite;
         rednerLabelquantity(response);
@@ -33,11 +47,9 @@ window.onload = function() {
     // Aggiunge un evento click al pulsante 'add'
     addButton.addEventListener('click', function() {
         axios.post('/api/product/add', {
-            params: {
-                id: id,
-                clientId: clientId
-            }}
-        )
+            id: id,
+            clientId: clientId
+        })
         .then(response => {
             quantityLabel.textContent = response.data.quantity;
             rednerLabelquantity(response);
@@ -52,11 +64,9 @@ window.onload = function() {
     // Aggiunge un evento click al pulsante 'remove'
     removeButton.addEventListener('click', function() {
         axios.post('/api/product/remove', {
-            params: {
             id: id,
             clientId: clientId
-            }}
-        )
+        })
         .then(response => {
             quantityLabel.textContent = response.data.quantity;
             rednerLabelquantity(response);
@@ -93,6 +103,9 @@ window.onload = function() {
             frame.classList.remove('red');
             frame.classList.remove('green');
 
+            endymion.with(framered).setScale({x:0, y:0, z:0}).apply(); 
+            endymion.with(framegreen).setScale({x:0, y:0, z:0}).apply(); 
+
             console.debug('neutral');
         }
         else if(response.data.quantity != response.data.requisite){
@@ -102,11 +115,14 @@ window.onload = function() {
             frame.classList.remove('green');
             frame.classList.add('red');
 
-            endymion.with(quad)
+           /*  endymion.with(framegldf)
             .setColor(rgba(192, 0, 0, 0.3))
-            .apply();
+            .apply(); */
 
-            console.debug('error');
+            endymion.with(framegreen).setScale({x:0, y:0, z:0}).apply(); 
+            endymion.with(framered).setScale({x:0.5, y:0.05, z:0.5}).apply(); 
+
+            console.debug('red');
         }
         else if(response.data.quantity == response.data.requisite){
             quantityValueLabel.classList.remove("red")
@@ -115,11 +131,14 @@ window.onload = function() {
             frame.classList.remove('red');
             frame.classList.add('green');
 
-            endymion.with(quad)
+            /* endymion.with(framegldf)
             .setColor(rgba(0, 176, 80, 0.3))
-            .apply();
+            .apply(); */
 
-            console.debug('valid');
+            endymion.with(framered).setScale({x:0, y:0, z:0}).apply(); 
+            endymion.with(framegreen).setScale({x:0.5, y:0.05, z:0.5}).apply(); 
+
+            console.debug('green');
         }
     };
 
@@ -133,11 +152,27 @@ window.onload = function() {
     this.classList.remove('active');
     };
 
-    const quad = endymion.quad()
+    function toCurrency(value){
+        if(value === undefined) return "";
+        return (Math.round(value * 100) / 100).toString().replace('.', ',') + " €";
+    };
+
+    /* const framegldf = endymion.quad()
         .setScale({x:-2.5, y:-2.5, z:-2.5})
         .setPosY(2.0)
+        .render(); */
+    
+    const framegreen = endymion.loadAsset('https://smpt-agriverse.eu.ngrok.io/assets/framegreen.glb')
+        .setScale({x:0, y:0, z:0})
+        .setPosition({ x: 0, y: 2.3, z: 0 })
+        .setRotation({ x: 0, y:90, z: 90 })
+        //.setPosY(2.0)
         .render();
-    /* endymion.with(quad)
-        .setColor(rgba(255,0,0,0.1))
-        .apply(); */
+
+    const framered = endymion.loadAsset('https://smpt-agriverse.eu.ngrok.io/assets/framered.glb')
+        .setScale({x:0, y:0, z:0})
+        .setPosition({ x: 0, y: 2.3, z: 0 })
+        .setRotation({ x: 0, y:90, z: 90 })
+        //.setPosY(2.0)
+        .render();
 };

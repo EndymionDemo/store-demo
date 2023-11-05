@@ -12,18 +12,18 @@
   </head>
   <body>
     <div class="container">
-      <div class="icona">
-        <img src="shopping-icon.png" alt="Icona" />
+      <div class="icon">
+        <img src="shopping-icon.png" alt="lista della spesa" />
       </div>
-      <div class="div-a-scomparsa">
+      <div class="content-disappearance">
         <ul class="tab">
-          <li class="attivo" tab-id="lista-della-spesa">
+          <li class="active" tab-id="shopping-list">
             <button>Lista della spesa</button>
           </li>
-          <li tab-id="carrello"><button>Carrello</button></li>
+          <li tab-id="cart"><button>Carrello</button></li>
         </ul>
-        <div class="contenuto">
-          <div id="lista-della-spesa" class="attivo">
+        <div class="inner-content">
+          <div id="shopping-list" class="active">
             <table>
               <thead>
                 <tr>
@@ -36,7 +36,7 @@
               </tbody>
             </table>
           </div>
-          <div id="carrello">
+          <div id="cart">
             <table>
               <thead>
                 <tr>
@@ -48,11 +48,19 @@
               <tbody>
                 
               </tbody>
+              <tfoot>
+                <tr>
+                  <th>TOTALE</th>
+                  <th></th>
+                  <th class="total-expense"></th>
+                </tr>
+              </tfoot>
             </table>
+            <button class="to-pay">PAGA SUBITO</button>
           </div>
         </div>
       </div>
     </div>
-    <p class="client"></p>
+    <p class="client" style="display: none;"></p>
   </body>
 </html>
