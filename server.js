@@ -95,8 +95,8 @@ app.get('/api/shopping', function(req, res) {
   let clientId = req.query.clientId;
   console.log("get shoppinglist by clientId: " + clientId);
   // Fai qualcosa con l'ID
-  let productsCart = readJsonFile('DB/cart.json');
-  let shoppingLists = readJsonFile('DB/shopping-lists.json');
+  let productsCart = readJsonFile('Fake-DB/cart.json');
+  let shoppingLists = readJsonFile('Fake-DB/shopping-lists.json');
   // Rispondi alla richiesta
   let data = { 
     shoppingList: {products: shoppingLists},
@@ -111,8 +111,8 @@ app.get('/api/shopping/topay', function(req, res) {
   console.log("pay cart by clientId: " + clientId);
   // Fai qualcosa con l'ID
   resetCartByListcode();
-  let productsCart = readJsonFile('DB/cart.json');
-  let shoppingLists = readJsonFile('DB/shopping-lists.json');
+  let productsCart = readJsonFile('Fake-DB/cart.json');
+  let shoppingLists = readJsonFile('Fake-DB/shopping-lists.json');
   // Rispondi alla richiesta
   let data = { 
     shoppingList: {products: shoppingLists},
@@ -159,7 +159,7 @@ function writeJsonFile(filePath, data) {
 };
 
 function addToCart(barCode, listCode) {
-  const cart = readJsonFile('DB/cart.json');
+  const cart = readJsonFile('Fake-DB/cart.json');
   const product = getProductByBarcode(barCode);
   const existingProductIndex = cart.findIndex(item => item.barCode === barCode && item.listCode === (listCode || 'AA01'));
 
@@ -182,11 +182,11 @@ function addToCart(barCode, listCode) {
       cart.push(productToadd);
   }
 
-  writeJsonFile('DB/cart.json', cart);
+  writeJsonFile('Fake-DB/cart.json', cart);
 };
 
 function removeFromCart(barCode, listCode) {
-  const cart = readJsonFile('DB/cart.json');
+  const cart = readJsonFile('Fake-DB/cart.json');
   const existingProductIndex = cart.findIndex(item => item.barCode === barCode && item.listCode === (listCode || 'AA01'));
 
   if (existingProductIndex >= 0) {
@@ -200,38 +200,38 @@ function removeFromCart(barCode, listCode) {
           cart.splice(existingProductIndex, 1);
       }
 
-      writeJsonFile('DB/cart.json', cart);
+      writeJsonFile('Fake-DB/cart.json', cart);
   } else {
       console.log("Il prodotto non è presente nel carrello.");
   }
 };
 
 function resetCartByListcode(listCode){
-  const cart = readJsonFile('DB/cart.json');
+  const cart = readJsonFile('Fake-DB/cart.json');
   const updatedCart = cart.filter(item => item.listCode !== (listCode || 'AA01'));
-  writeJsonFile('DB/cart.json', updatedCart);
+  writeJsonFile('Fake-DB/cart.json', updatedCart);
 };
 
 function getProductByBarcode(barcode) {
-  const data = readJsonFile('DB/products.json');
+  const data = readJsonFile('Fake-DB/products.json');
   const product = data.find(item => item.barCode === barcode);
   return product || {};
 };
 
 function getProductByBarcodeOrListCode(barcode, listCode) {
-  const data = readJsonFile('DB/shopping-lists.json');
+  const data = readJsonFile('Fake-DB/shopping-lists.json');
   const product = data.find(item => item.barCode === barcode && item.listCode === (listCode || 'AA01'));
   return product || {};
 };
 
 function getCartProductByBarcodeOrListCode(barcode, listCode) {
-  const data = readJsonFile('DB/cart.json');
+  const data = readJsonFile('Fake-DB/cart.json');
   const product = data.find(item => item.barCode === barcode && item.listCode === (listCode || 'AA01'));
   return product || {};
 }
 
 function printQrForAllProducts(){
-  const products = readJsonFile('DB/products.json');
+  const products = readJsonFile('Fake-DB/products.json');
   products.forEach(product => {
     console.log(product.name);
     qrcode.generate('http://' + ip + ':' + port + '/product.html?id=' + product.barCode, {small: true})
