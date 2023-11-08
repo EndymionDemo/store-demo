@@ -1,4 +1,4 @@
-window.onload = function () {
+﻿window.onload = function () {
   const icona = document.querySelector('.icon');
   const divAScomparsa = document.querySelector('.content-disappearance');
   // Imposta il tab attivo quando viene fatto clic su un elemento della lista
@@ -9,7 +9,7 @@ window.onload = function () {
   const tCart = document.querySelector('#cart table');
   const tCartTotalExpsense = tCart.querySelector('tfoot th.total-expense');
   const bToPay = document.querySelector('button.to-pay');
-
+  const baseUrl = window.location.protocol + "//" + window.location.hostname + ':3000';
 
   console.log(document.cookie);
   let clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*\=\s*([^;]*).*$)|^.*$/, "$1");
@@ -18,7 +18,7 @@ window.onload = function () {
   icona.addEventListener('click', () => {
     divAScomparsa.classList.toggle('active');
     if (divAScomparsa.classList.contains('active')) {
-      axios.get('/api/shopping', {
+      axios({method:'get', url:'/api/shopping', baseURL:baseUrl}, {
         params: {
           clientId: clientId
         }
@@ -35,7 +35,7 @@ window.onload = function () {
   });
 
   bToPay.addEventListener('click', function() {
-    axios.get('/api/shopping/topay', {
+    axios({method:'get', url:'/api/shopping/topay', baseURL:baseUrl},{
       params: {
         clientId: clientId
       }

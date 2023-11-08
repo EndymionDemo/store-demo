@@ -51,7 +51,7 @@ window.onload = function() {
   
     // Aggiunge un evento click al pulsante 'add'
     addButton.addEventListener('click', function() {
-        axios.post('/api/product/add', {
+        axios({ method:'post', url:'/api/product/add', baseURL:baseUrl}, {
             id: id,
             clientId: clientId
         })
@@ -68,7 +68,7 @@ window.onload = function() {
   
     // Aggiunge un evento click al pulsante 'remove'
     removeButton.addEventListener('click', function() {
-        axios.post('/api/product/remove', {
+        axios({ method:'post', url:'/api/product/remove', baseURL:baseUrl},{
             id: id,
             clientId: clientId
         })
@@ -167,17 +167,17 @@ window.onload = function() {
         .setPosY(2.0)
         .render(); */
     
-    const framegreen = endymion.loadAsset('https://smpt-agriverse.eu.ngrok.io/assets/framegreen.glb')
+    const framegreen = endymion.loadAsset('assets/framegreen.glb')
         .setScale({x:0, y:0, z:0})
         .setPosition({ x: 0, y: 2.3, z: 0 })
-        .setRotation({ x: 0, y:90, z: 90 })
+        .setRotation({ x: 0, y:90, z: 90 })
         //.setPosY(2.0)
         .render();
 
-    const framered = endymion.loadAsset('https://smpt-agriverse.eu.ngrok.io/assets/framered.glb')
+    const framered = endymion.loadAsset('assets/framered.glb')
         .setScale({x:0, y:0, z:0})
         .setPosition({ x: 0, y: 2.3, z: 0 })
-        .setRotation({ x: 0, y:90, z: 90 })
+        .setRotation({ x: 0, y:90, z: 90 })
         //.setPosY(2.0)
         .render();
 };

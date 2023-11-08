@@ -3,11 +3,11 @@
   "version": "1.0.0",
   "description": "demo of endymion browser with endymion library",
   "scripts": {
-    "start-docker": "npm run docker && npm run qrcode",
-    "restart-docker": "npm run stop && npm run start-docker",
+    "start": "npm run docker && npm run qrcode",
+    "restart": "npm run stop && npm run start-docker",
     "stop": "docker compose down",
     "qrcode": "node qrcode.js",
-    "docker": "docker compose up -d"
+    "docker": "docker compose up -f store-demo.yaml -d"
   },
   "author": "",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
     "express": "^4.18.2",
+    "my-ip": "^1.1.1",
     "my-local-ip": "^1.0.0",
     "qrcode-terminal": "^0.12.0",
     "uuid": "^9.0.1"
