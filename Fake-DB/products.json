@@ -1,0 +1,51 @@
+[
+    {
+        "barCode": "884912268372",
+        "brand": "Post",
+        "name": "Honey Maid S'mores Cereal",
+        "price": 4.99,
+        "quantityInStock": 12
+    },
+    {
+        "barCode": "884912273116",
+        "brand": "Oreo",
+        "name": "O's Breakfast Cereal",
+        "price": 5.99,
+        "quantityInStock": 8
+    },
+    {
+        "barCode": "752798246473",
+        "brand": "Post",
+        "name": "Chips Ahoy Breakfast Cereal",
+        "price": 4.49,
+        "quantityInStock": 16
+    },
+    {
+        "barCode": "042400244998",
+        "brand": "Malt-O-Meal",
+        "name": "Tootie Fruities Breakfast Cereal",
+        "price": 3.79,
+        "quantityInStock": 4
+    },
+    {
+        "barCode": "884912129710",
+        "brand": "Post",
+        "name": "Fruity Pebbles Cereal",
+        "price": 7.99,
+        "quantityInStock": 5
+    },
+    {
+        "barCode": "884912290090",
+        "brand": "Post",
+        "name": "Peanut Butter & Chici Pebbles",
+        "price": 4.99,
+        "quantityInStock": 9
+    },
+    {
+        "barCode": "884912129320",
+        "brand": "Malt-O-Meal",
+        "name": "Fruit Dyno Bites",
+        "price": 4.99,
+        "quantityInStock": 11
+    }
+]

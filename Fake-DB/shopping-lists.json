@@ -1,0 +1,23 @@
+[
+    {
+        "listCode": "AA01",
+        "barCode": "884912273116",
+        "brand": "Oreo",
+        "name": "O's Breakfast Cereal",
+        "quantity": 1
+    },
+    {
+        "listCode": "AA01",
+        "barCode": "042400244998",
+        "brand": "Malt-O-Meal",
+        "name": "Tootie Fruities Breakfast Cereal",
+        "quantity": 1
+    },
+    {
+        "listCode": "AA01",
+        "barCode": "884912129710",
+        "brand": "Post",
+        "name": "Fruity Pebbles Cereal",
+        "quantity": 2
+    }
+]

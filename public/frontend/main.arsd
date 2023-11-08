@@ -1,14 +1,14 @@
 {
-  "ViewMode": 0,
+  "ViewMode": 3,
   "WV_Offset": [
     0.0,
-    2.4,
+    0.0,
     0.0
   ],
   "WV_Scale": [
-    3,
-    3,
-    0
+    1.0,
+    1.0,
+    1.0
   ],
   "WV_Rotation": [
     0.0,

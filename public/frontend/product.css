@@ -1,9 +1,11 @@
 body{
   background-color: transparent!important;
+  padding: 3rem;
+  font-family: sans-serif;
 }
 
-.frame {
-  width: 80rem;
+/* .frame {
+  width: 65rem;
   height: 60rem;
 }
 
@@ -17,32 +19,32 @@ body{
   border: 0.5rem solid #00B050;
   box-shadow: 0 0 3rem rgba(0, 176, 80, 0.5), 0 0 4rem rgba(0, 176, 80, 0.5);
   box-sizing: border-box;
-}
+} */
 
 .product-component {
-  width: 80rem;
+  width: 63rem;
   height: 15.5rem;
   background-color: white;
   border-radius: 10rem;
-  margin-top: 5rem;
+  /*margin-top: 5rem;*/
   align-items: center;
   justify-content: space-between;
   border: 0.5rem solid #557FCA;
-  box-shadow: 0 0 3rem rgba(85, 127, 202, 0.5), 0 0 4rem rgba(85, 127, 202, 0.5);
-  padding: 2rem;
-  display: inline-flex;
+  box-shadow: 0 0 2.4rem rgba(85, 127, 202, 0.5), 0 0 2.4rem rgba(85, 127, 202, 0.5);
+  padding: 1.5rem;
+  display: flex;
   box-sizing: border-box;
 }
 
 .label-quantity {
-  font-size: 7rem;
+  font-size: 5rem;
   text-align: center;
   font-weight: bold;
   color: #557FCA;
-  border-radius: 10rem;
-  padding: 1.5rem;
-  margin-left: 0.5rem;
-  margin-right: 0.5rem;
+  border-radius: 7rem;
+  padding: 3rem 1rem;
+  margin-left: 0rem;
+  margin-right: 0rem;
 }
 
 .label-quantity.green {
@@ -56,13 +58,13 @@ body{
 }
 
 .price {
-  font-size: 7rem;
+  font-size: 5rem;
   font-weight: bold;
   border-radius: 10rem;
   background-color: #557FCA;
   color: white;
   margin-right: 2rem;
-  padding: 1.5rem;
+  padding: 3rem 1rem;
 }
 
 .remove {
