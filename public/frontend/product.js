@@ -7,6 +7,8 @@ window.onload = function() {
     const removeButton = document.querySelector('button.remove');
     const frame = document.querySelector('div.frame');
     const client = document.querySelector('p.client');
+    const baseUrl = window.location.protocol + "//" + window.location.hostname + ':3000';
+    console.log(baseUrl);
 
     console.log(document.cookie);
     let id = document.cookie.replace(/(?:(?:^|.*;\s*)id\s*\=\s*([^;]*).*$)|^.*$/, "$1");
@@ -14,7 +16,7 @@ window.onload = function() {
     client.textContent = "clientId: " + clientId;
   
     // Carica il prezzo e la quantità iniziali
-    axios.get('/api/product', {
+    axios({ method:'get', url:'/api/product', baseURL:baseUrl}, {
         params: {
           id: id,
           clientId: clientId
@@ -27,6 +29,9 @@ window.onload = function() {
         rednerLabelquantity(response);
     })
     .catch(function (error) {
+        var div  = document.createElement('div');
+        div.innerHTML = '<p>' + JSON.stringify(error) + '</p>';
+        document.body.appendChild(div);
         console.error(error);
     });
   

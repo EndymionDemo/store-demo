@@ -1,17 +1,18 @@
 const express = require('express');
 const axios = require('axios');
+const cors = require('cors');
 const qrcode = require('qrcode-terminal');
 const myLocalIP = require('my-local-ip');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const uuid = require('uuid');
-const port = 8080;
+const port = 3000;
 const ip = myLocalIP();
 const app = express();
 console.log(ip);
 
 qrcode.generate('https://smpt-agriverse.eu.ngrok.io/product.html?id=884912268372', {small: true})
-
+app.use(cors());
 app.use(cookieParser());
 app.use(express.static('public')); // Serve i file statici dalla cartella 'public'
 
@@ -83,6 +84,7 @@ app.get('/api/product', function(req, res) {
   quantity = 0;
   var data = {price: '4,99 €', quantity: quantity, requisite: 2};
   res.send(data);
+
 });
 
 app.get('/api/shopping', function(req, res) {
