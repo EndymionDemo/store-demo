@@ -6,21 +6,23 @@ const myLocalIP = require('my-local-ip');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const uuid = require('uuid');
-const port = 3000;
+const port = 8085;
 const ip = myLocalIP();
 const app = express();
 const fs = require('fs');
-console.log(ip);
+const baseUrl = 'http://localhost:8085';
+console.log(baseUrl);
 
-qrcode.generate('https://smpt-agriverse.eu.ngrok.io/product.html?id=884912268372', {small: true})
-app.use(cors());
+qrcode.generate('http://localhost:8085/product.html?id=884912268372', {small: true})
 // Middleware per il parsing del corpo delle richieste JSON
+app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public')); // Serve i file statici dalla cartella 'public'
 
 app.get('/main.html', (req, res) => {
   // Genera un UUID per il cliente se non ne esiste già uno
+  console.log('chiamato main.html ');
   let clientId = req.cookies.clientId;
   if (!clientId) {
     clientId = uuid.v4();
@@ -238,6 +240,6 @@ function printQrForAllProducts(){
   const products = readJsonFile('Fake-DB/products.json');
   products.forEach(product => {
     console.log(product.name);
-    qrcode.generate('http://' + ip + ':' + port + '/product.html?id=' + product.barCode, {small: true})
+    qrcode.generate('http://localhost:8085/product.html?id=' + product.barCode, {small: true})
   });
 }

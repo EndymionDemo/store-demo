@@ -9,7 +9,7 @@
   const tCart = document.querySelector('#cart table');
   const tCartTotalExpsense = tCart.querySelector('tfoot th.total-expense');
   const bToPay = document.querySelector('button.to-pay');
-  const baseUrl = window.location.protocol + "//" + window.location.hostname + ':3000';
+  const baseUrl = 'htto://localhost:8085';
 
   console.log(document.cookie);
   let clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*\=\s*([^;]*).*$)|^.*$/, "$1");

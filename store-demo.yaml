@@ -1,13 +1,5 @@
 version: "3.9"
 services:  
-  frontend5:
-    image: nginx:1.17.3-alpine
-    container_name: store-demo.endymion.tech
-    volumes:
-      - "./public/frontend/:/usr/share/nginx/html/"
-    ports:
-      - "8085:80"
-
   nodejs:
     build:
       context: .
@@ -16,7 +8,7 @@ services:
     container_name: nodejs
     restart: unless-stopped
     ports:
-      - "3000:3000"
+      - "8085:80"
     volumes:
-      - ./public/backend/:/usr/src/app
+      - ./demo/:/usr/src/app
       - ./node_modules/:/usr/src/app/node_modules

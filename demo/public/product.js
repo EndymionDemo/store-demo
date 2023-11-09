@@ -7,7 +7,7 @@ window.onload = function() {
     const removeButton = document.querySelector('button.remove');
     const frame = document.querySelector('div.frame');
     const client = document.querySelector('p.client');
-    const baseUrl = window.location.protocol + "//" + window.location.hostname + ':3000';
+    const baseUrl = 'http://localhost:8085';
     console.log(baseUrl);
 
     console.log(document.cookie);

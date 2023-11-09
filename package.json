@@ -4,10 +4,10 @@
   "description": "demo of endymion browser with endymion library",
   "scripts": {
     "start": "npm run docker && npm run qrcode",
-    "restart": "npm run stop && npm run start-docker",
-    "stop": "docker compose down",
+    "restart": "npm run stop && npm run start",
+    "stop": "docker compose -f store-demo.yaml down",
     "qrcode": "node qrcode.js",
-    "docker": "docker compose up -f store-demo.yaml -d"
+    "docker": "docker compose -f store-demo.yaml up"
   },
   "author": "",
   "license": "ISC",
