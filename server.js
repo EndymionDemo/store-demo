@@ -40,11 +40,19 @@ app.get('/product.html', (req, res) => {
     clientId = uuid.v4();
     res.cookie('clientId', clientId);
   }
-  const pagePath = path.join(__dirname, 'public', 'product-component.html');
+  const pagePath = path.join(__dirname, 'public', `product-component.html`);
   console.log(pagePath);
   console.log("clientId: " + clientId),
   console.log("productId: " + id);
-  res.sendFile(pagePath); // Invia il file index.html quando si visita l'URL principale
+  //res.sendFile(pagePath); // Invia il file index.html quando si visita l'URL principale
+  fs.readFile(pagePath, 'utf8', function(err, data){
+    if (err){
+        return console.log(err);
+    }
+    // Aggiungi lo script per impostare l'ID nel Session Storage
+    data = data.replace('</body>', `<script>sessionStorage.setItem('id', '${id}');</script></body>`);
+    res.send(data);
+  });
 });
 
 app.post('/api/product/add', function(req, res) {

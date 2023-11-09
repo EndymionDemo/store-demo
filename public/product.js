@@ -11,7 +11,7 @@ window.onload = function() {
     console.log(baseUrl);
 
     console.log(document.cookie);
-    const id = document.cookie.replace(/(?:(?:^|.*;\s*)id\s*\=\s*([^;]*).*$)|^.*$/, "$1");
+    const id = sessionStorage.getItem('id');
     const clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*\=\s*([^;]*).*$)|^.*$/, "$1");
     client.textContent = "clientId: " + clientId;
 
@@ -166,7 +166,7 @@ window.onload = function() {
         .setScale({x:-2.5, y:-2.5, z:-2.5})
         .setPosY(2.0)
         .render(); */
-    
+      
     const framegreen = endymion.loadAsset('assets/framegreen.glb')
         .setScale({x:0, y:0, z:0})
         .setPosition({ x: 0, y: 2.3, z: 0 })
