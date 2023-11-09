@@ -2,7 +2,7 @@ const express = require('express');
 const axios = require('axios');
 const cors = require('cors');
 const qrcode = require('qrcode-terminal');
-const myLocalIP = require('my-local-ip');
+// const myLocalIP = require('my-local-ip');
 const cookieParser = require('cookie-parser');
 const path = require('path');
 const uuid = require('uuid');
@@ -10,10 +10,8 @@ const port = 8085;
 const ip = myLocalIP();
 const app = express();
 const fs = require('fs');
-const baseUrl = 'http://localhost:8085';
-console.log(baseUrl);
-
-qrcode.generate('http://localhost:8085/product.html?id=884912268372', {small: true})
+var baseUrl = 'https://store-demo.endymion.tech';
+qrcode.generate(baseUrl +'/product.html?id=884912268372', {small: true})
 // Middleware per il parsing del corpo delle richieste JSON
 app.use(cors());
 app.use(express.json());
@@ -239,6 +237,6 @@ function printQrForAllProducts(){
   const products = readJsonFile('Fake-DB/products.json');
   products.forEach(product => {
     console.log(product.name);
-    qrcode.generate('http://localhost:8085/product.html?id=' + product.barCode, {small: true})
+    qrcode.generate(baseUrl + '/product.html?id=' + product.barCode, {small: true})
   });
 }

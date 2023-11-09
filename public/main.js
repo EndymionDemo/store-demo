@@ -9,7 +9,6 @@
   const tCart = document.querySelector('#cart table');
   const tCartTotalExpsense = tCart.querySelector('tfoot th.total-expense');
   const bToPay = document.querySelector('button.to-pay');
-  const baseUrl = 'htto://localhost:8085';
 
   console.log(document.cookie);
   let clientId = document.cookie.replace(/(?:(?:^|.*;\s*)clientId\s*\=\s*([^;]*).*$)|^.*$/, "$1");
@@ -18,7 +17,7 @@
   icona.addEventListener('click', () => {
     divAScomparsa.classList.toggle('active');
     if (divAScomparsa.classList.contains('active')) {
-      axios({method:'get', url:'/api/shopping', baseURL:baseUrl}, {
+      axios.get('/api/shopping', {
         params: {
           clientId: clientId
         }
@@ -35,7 +34,7 @@
   });
 
   bToPay.addEventListener('click', function() {
-    axios({method:'get', url:'/api/shopping/topay', baseURL:baseUrl},{
+    axios.get('/api/shopping/topay',{
       params: {
         clientId: clientId
       }

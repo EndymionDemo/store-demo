@@ -30,7 +30,7 @@ window.onload = function() {
     }); */
   
     // Carica il prezzo e la quantità iniziali
-    axios({ method:'get', url:'/api/product', baseURL:baseUrl}, {
+    axios.get('/api/product', {
         params: {
           id: id,
           clientId: clientId
@@ -51,7 +51,7 @@ window.onload = function() {
   
     // Aggiunge un evento click al pulsante 'add'
     addButton.addEventListener('click', function() {
-        axios({ method:'post', url:'/api/product/add', baseURL:baseUrl}, {
+        axios.post('/api/product/add', {
             id: id,
             clientId: clientId
         })
@@ -68,7 +68,7 @@ window.onload = function() {
   
     // Aggiunge un evento click al pulsante 'remove'
     removeButton.addEventListener('click', function() {
-        axios({ method:'post', url:'/api/product/remove', baseURL:baseUrl},{
+        axios.post('/api/product/remove',{
             id: id,
             clientId: clientId
         })
