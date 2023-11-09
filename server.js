@@ -22,7 +22,6 @@ app.use(express.static('public')); // Serve i file statici dalla cartella 'publi
 
 app.get('/main.html', (req, res) => {
   // Genera un UUID per il cliente se non ne esiste già uno
-  console.log('chiamato main.html ');
   let clientId = req.cookies.clientId;
   if (!clientId) {
     clientId = uuid.v4();
