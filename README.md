@@ -28,11 +28,11 @@ For run demo you have to perform this step:
 3 - open your computer firewall for 8080 tcp port   
 for linux
 ```bash
-    sudo ufw allow 8080
+    sudo ufw allow 8085
 ```
 for windows using powershell with admin privilege
 ```powershell
-netsh advfirewall firewall add rule name="store-demo" dir=in action=allow protocol=TCP localport=8080
+netsh advfirewall firewall add rule name="store-demo" dir=in action=allow protocol=TCP localport=8085
 ```
     
 ## Run Locally
