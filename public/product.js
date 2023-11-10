@@ -7,8 +7,6 @@ window.onload = function() {
     const removeButton = document.querySelector('button.remove');
     const frame = document.querySelector('div.frame');
     const client = document.querySelector('p.client');
-    const baseUrl = 'http://localhost:8085';
-    console.log(baseUrl);
 
     console.log(document.cookie);
     const id = sessionStorage.getItem('id');
@@ -167,14 +165,14 @@ window.onload = function() {
         .setPosY(2.0)
         .render(); */
       
-    const framegreen = endymion.loadAsset('assets/framegreen.glb')
+    const framegreen = endymion.loadAsset('/assets/framegreen.glb')
         .setScale({x:0, y:0, z:0})
         .setPosition({ x: 0, y: 2.3, z: 0 })
         .setRotation({ x: 0, y:90, z: 90 })
         //.setPosY(2.0)
         .render();
 
-    const framered = endymion.loadAsset('assets/framered.glb')
+    const framered = endymion.loadAsset('/assets/framered.glb')
         .setScale({x:0, y:0, z:0})
         .setPosition({ x: 0, y: 2.3, z: 0 })
         .setRotation({ x: 0, y:90, z: 90 })

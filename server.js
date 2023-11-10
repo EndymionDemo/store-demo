@@ -1,6 +1,6 @@
 const express = require('express');
 const axios = require('axios');
-const cors = require('cors');
+
 const qrcode = require('qrcode-terminal');
 const myLocalIP = require('my-local-ip');
 const cookieParser = require('cookie-parser');
@@ -13,7 +13,7 @@ const fs = require('fs');
 var baseUrl = 'https://store-demo.endymion.tech';
 qrcode.generate(baseUrl +'/product.html?id=884912268372', {small: true})
 // Middleware per il parsing del corpo delle richieste JSON
-app.use(cors());
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(express.static('public')); // Serve i file statici dalla cartella 'public'
