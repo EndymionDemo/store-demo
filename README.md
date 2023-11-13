@@ -19,7 +19,7 @@ For run demo you have to perform this step:
 1 - Download with your device (Android) the Endymion Browser apk scanning this qr code and clicking on "Download Beta"        
     (registration is required)   
 
-![Endymion Browser](https://endymion.tech/endymion-address-qrcode-300x300.png)      
+![Endymion Browser](https://endymion.tech/qr-code-address/endymion.tech_300x300.png)      
 
 
 
