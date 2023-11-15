@@ -99,6 +99,7 @@ window.onload = function() {
     addButton.addEventListener('touchend', removeActiveClass);
 
     function rednerLabelquantity(response){
+        let frame;
         if(response.data.quantity != response.data.requisite && response.data.requisite == 0 && response.data.quantity == 0){
             quantityValueLabel.classList.remove("red");
             quantityValueLabel.classList.remove("green")
@@ -106,8 +107,12 @@ window.onload = function() {
             frame.classList.remove('red');
             frame.classList.remove('green');
 
-            endymion.with(framered).setScale({x:0, y:0, z:0}).apply(); 
-            endymion.with(framegreen).setScale({x:0, y:0, z:0}).apply(); 
+            if(frame && frame.objectId){
+                endymion.core.destroyObject(frame.objectId);
+            }
+            
+            //endymion.with(framered).setScale({x:0, y:0, z:0}).apply(); 
+            //endymion.with(framegreen).setScale({x:0, y:0, z:0}).apply(); 
 
             console.debug('neutral');
         }
@@ -121,9 +126,12 @@ window.onload = function() {
            /*  endymion.with(framegldf)
             .setColor(rgba(192, 0, 0, 0.3))
             .apply(); */
-
-            endymion.with(framegreen).setScale({x:0, y:0, z:0}).apply(); 
-            endymion.with(framered).setScale({x:0.5, y:0.05, z:0.5}).apply(); 
+            if(frame && frame.objectId){
+                endymion.core.destroyObject(frame.objectId);
+            }
+            //endymion.with(framegreen).setScale({x:0, y:0, z:0}).apply(); 
+            frame = getFrameRed();
+            //endymion.with(framered).setScale({x:0.5, y:0.05, z:0.5}).apply(); 
 
             console.debug('red');
         }
@@ -138,8 +146,12 @@ window.onload = function() {
             .setColor(rgba(0, 176, 80, 0.3))
             .apply(); */
 
-            endymion.with(framered).setScale({x:0, y:0, z:0}).apply(); 
-            endymion.with(framegreen).setScale({x:0.5, y:0.05, z:0.5}).apply(); 
+            if(frame && frame.objectId){
+                endymion.core.destroyObject(frame.objectId);
+            }
+            //endymion.with(framered).setScale({x:0, y:0, z:0}).apply(); 
+            frame = getFrameGreen();
+            //endymion.with(framegreen).setScale({x:0.5, y:0.05, z:0.5}).apply(); 
 
             console.debug('green');
         }
@@ -165,17 +177,37 @@ window.onload = function() {
         .setPosY(2.0)
         .render(); */
       
-    const framegreen = endymion.loadAsset('/assets/framegreen.glb')
+    /* const framegreen = endymion.loadAsset('assets/framegreen.glb')
         .setScale({x:0, y:0, z:0})
         .setPosition({ x: 0, y: 2.3, z: 0 })
         .setRotation({ x: 0, y:90, z: 90 })
         //.setPosY(2.0)
         .render();
 
-    const framered = endymion.loadAsset('/assets/framered.glb')
+    const framered = endymion.loadAsset('assets/framered.glb')
         .setScale({x:0, y:0, z:0})
         .setPosition({ x: 0, y: 2.3, z: 0 })
         .setRotation({ x: 0, y:90, z: 90 })
         //.setPosY(2.0)
         .render();
+ */
+    function getFrameRed(){
+        return endymion.loadAsset('assets/framered.glb')
+        //.setScale({x:0, y:0, z:0})
+        .setScale({x:0.5, y:0.05, z:0.5})
+        .setPosition({ x: 0, y: 2.3, z: 0 })
+        .setRotation({ x: 0, y:90, z: 90 })
+        //.setPosY(2.0)
+        .render();
+    };
+
+    function getFrameGreen(){
+        return endymion.loadAsset('assets/framegreen.glb')
+        //.setScale({x:0, y:0, z:0})
+        .setScale({x:0.5, y:0.05, z:0.5})
+        .setPosition({ x: 0, y: 2.3, z: 0 })
+        .setRotation({ x: 0, y:90, z: 90 })
+        //.setPosY(2.0)
+        .render();
+    }
 };
