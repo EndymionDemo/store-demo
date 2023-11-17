@@ -195,7 +195,7 @@ window.onload = function() {
         return endymion.loadAsset('assets/freccia_red.glb')//.loadAsset('assets/framered.glb')
         //.setScale({x:0, y:0, z:0})
         .setScale({x:0.1, y:0.1, z:0.1})
-        .setPosition({ x: 0, y: 0.8, z: 0 })
+        .setPosition({ x: 0, y: 0.9, z: 0 })
         .setRotation({ x: -90, y: -90, z: 90 })
         //.setPosY(2.0)
         .render();
@@ -205,7 +205,7 @@ window.onload = function() {
         return endymion.loadAsset('assets/freccia_green.glb')//.loadAsset('assets/framegreen.glb')
         //.setScale({x:0, y:0, z:0})
         .setScale({x:0.1, y:0.1, z:0.1})
-        .setPosition({ x: 0, y: 0.8, z: 0 })
+        .setPosition({ x: 0, y: 0.9, z: 0 })
         .setRotation({ x: -90, y: -90, z: 90 })
         //.setPosY(2.0)
         .render();
