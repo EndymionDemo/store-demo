@@ -192,21 +192,21 @@ window.onload = function() {
         .render();
  */
     function getFrameRed(){
-        return endymion.loadAsset('assets/framered.glb')
+        return endymion.loadAsset('assets/freccia_red.glb')//.loadAsset('assets/framered.glb')
         //.setScale({x:0, y:0, z:0})
-        .setScale({x:0.5, y:0.05, z:0.5})
-        .setPosition({ x: 0, y: 2.3, z: 0 })
-        .setRotation({ x: 0, y:90, z: 90 })
+        .setScale({x:0.1, y:0.1, z:0.1})
+        .setPosition({ x: 0, y: 0.8, z: 0 })
+        .setRotation({ x: -90, y: -90, z: 90 })
         //.setPosY(2.0)
         .render();
     };
 
     function getFrameGreen(){
-        return endymion.loadAsset('assets/framegreen.glb')
+        return endymion.loadAsset('assets/freccia_green.glb')//.loadAsset('assets/framegreen.glb')
         //.setScale({x:0, y:0, z:0})
-        .setScale({x:0.5, y:0.05, z:0.5})
-        .setPosition({ x: 0, y: 2.3, z: 0 })
-        .setRotation({ x: 0, y:90, z: 90 })
+        .setScale({x:0.1, y:0.1, z:0.1})
+        .setPosition({ x: 0, y: 0.8, z: 0 })
+        .setRotation({ x: -90, y: -90, z: 90 })
         //.setPosY(2.0)
         .render();
     }
