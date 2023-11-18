@@ -1,7 +1,14 @@
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
 body {
     font-family: sans-serif;
     background-color: transparent;
-    padding: 1rem;
+    padding: 16px;
 }
 
 .container {
@@ -11,45 +18,54 @@ body {
 
 .icon {
     position: fixed;
-    top: 1rem;
-    left: 1rem;
-    width: 10rem;
-    height: 10rem;
+    top: 16px;
+    left: 16px;
+    width: 160px;
+    height: 160px;
     cursor: pointer;
     border-radius: 50%;
     background-color: #557FCA;
     color: white;
-    align-items: center;
-    justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
     text-align: center;
-    box-shadow: 0 0 3rem rgba(85, 127, 202, 0.5), 0 0 4rem rgba(85, 127, 202, 0.5);
+    -webkit-box-shadow: 0 0 48px rgba(85, 127, 202, 0.5), 0 0 64px rgba(85, 127, 202, 0.5);
+            box-shadow: 0 0 48px rgba(85, 127, 202, 0.5), 0 0 64px rgba(85, 127, 202, 0.5);
 }
 
 .icon img {
-    width: 8rem;
-    height: 8rem;
-    margin-top: 1.5rem;
-    margin-left: 1rem;
+    width: 128px;
+    height: 128px;
+    margin-top: 24px;
+    margin-left: 16px;
 }
 
 .content-disappearance {
     position: fixed;
-    top: 1rem;
-    left: 13rem;
-    width: 53rem;
-    height: 0rem;
+    top: 16px;
+    left: 208px;
+    width: 848px;
+    height: 0px;
     background-color: #ffffff;
     border-radius: 5px;
     opacity: 0;
+    -webkit-transition: all 0.5s ease-in-out;
+    -o-transition: all 0.5s ease-in-out;
     transition: all 0.5s ease-in-out;
-    border: 0.5rem solid #557FCA;
-    box-shadow: 0 0 3rem rgba(85, 127, 202, 0.5), 0 0 4rem rgba(85, 127, 202, 0.5);
+    border: 8px solid #557FCA;
+    -webkit-box-shadow: 0 0 48px rgba(85, 127, 202, 0.5), 0 0 64px rgba(85, 127, 202, 0.5);
+            box-shadow: 0 0 48px rgba(85, 127, 202, 0.5), 0 0 64px rgba(85, 127, 202, 0.5);
     display: inline-table;
-    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
 }
 
 .content-disappearance.active {
-    min-height: 30rem;
+    min-height: 480px;
     opacity: 1;
 }
 
@@ -58,28 +74,35 @@ body {
     margin: 0;
     padding: 0;
     position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
 }
 
 .tab li {
-    margin-top: 1.5rem;
-    margin-right: 1rem;
-    margin-left: 1rem;
-    flex-basis: 24rem;
+    margin-top: 24px;
+    margin-right: 16px;
+    margin-left: 16px;
+    -ms-flex-preferred-size: 384px;
+        flex-basis: 384px;
 }
 
 .tab li button {
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: bold;
-    border-radius: 10rem;
-    border: 0.5rem solid #557FCA;
+    border-radius: 160px;
+    border: 8px solid #557FCA;
     background-color: #557FCA;
     color: white;
     width: 100%;
-    padding: 0.1rem;
+    padding: 1.6px;
     cursor: pointer;
 }
 
@@ -90,22 +113,22 @@ body {
 }
 
 button.to-pay{
-    margin-top: 1rem;
+    margin-top: 16px;
     text-decoration: none;
-    font-size: 2.5rem;
+    font-size: 40px;
     font-weight: bold;
-    border-radius: 10rem;
-    border: 0.5rem solid #557FCA;
+    border-radius: 160px;
+    border: 8px solid #557FCA;
     background-color: #557FCA;
     color: white;
     width: 100%;
-    padding: 0.1rem;
+    padding: 1.6px;
     cursor: pointer;
     position: absolute;
-    bottom: 1rem;
-    right: 1rem;
-    left: 1rem;
-    width: 50rem;
+    bottom: 16px;
+    right: 16px;
+    left: 16px;
+    width: 800px;
 }
 
 button.to-pay:disabled {
@@ -129,13 +152,13 @@ button.to-pay:disabled {
 table {
     border-collapse: collapse;
     width: 100%;
-    margin-bottom: 5rem;
+    margin-bottom: 80px;
   }
   
   th, td {
     padding: 10px;
     text-align: left;
-    font-size: 2rem;
+    font-size: 32px;
   }
 
   th:not(:first-child), td:not(:first-child){

@@ -1,50 +1,49 @@
-body{
-  background-color: transparent!important;
-  padding: 3rem;
+/*
+* Prefixed by https://autoprefixer.github.io
+* PostCSS: v8.4.14,
+* Autoprefixer: v10.4.7
+* Browsers: last 4 version
+*/
+
+body {
+  background-color: transparent !important;
+  padding: 48px;
   font-family: sans-serif;
 }
 
-/* .frame {
-  width: 65rem;
-  height: 60rem;
-}
-
-.frame.red {
-  border: 0.5rem solid #C00000;
-  box-shadow: 0 0 3rem rgba(192, 0, 0, 0.5), 0 0 4rem rgba(192, 0, 0, 0.5);
-  box-sizing: border-box;
-}
-
-.frame.green {
-  border: 0.5rem solid #00B050;
-  box-shadow: 0 0 3rem rgba(0, 176, 80, 0.5), 0 0 4rem rgba(0, 176, 80, 0.5);
-  box-sizing: border-box;
-} */
-
 .product-component {
-  width: 63rem;
-  height: 15.5rem;
+  width: 1008px;
+  height: 248px;
   background-color: white;
-  border-radius: 10rem;
-  /*margin-top: 5rem;*/
+  border-radius: 160px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
   justify-content: space-between;
-  border: 0.5rem solid #557FCA;
-  box-shadow: 0 0 2.4rem rgba(85, 127, 202, 0.5), 0 0 2.4rem rgba(85, 127, 202, 0.5);
-  padding: 1.5rem;
+  border: 8px solid #557FCA;
+  -webkit-box-shadow: 0 0 38.4px rgba(85, 127, 202, 0.5), 0 0 38.4px rgba(85, 127, 202, 0.5);
+  box-shadow: 0 0 38.4px rgba(85, 127, 202, 0.5), 0 0 38.4px rgba(85, 127, 202, 0.5);
+  padding: 24px;
+  display: -webkit-flex; /* NEW */
   display: flex;
+  -webkit-flex-wrap: wrap;
+  /* NEW */
+  flex-wrap: wrap;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
 .label-quantity {
-  font-size: 5rem;
+  font-size: 80px;
   text-align: center;
   font-weight: bold;
   color: #557FCA;
-  border-radius: 7rem;
-  padding: 3rem 1rem;
-  margin-left: 0rem;
-  margin-right: 0rem;
+  border-radius: 112px;
+  padding: 48px 16px;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
 .label-quantity.green {
@@ -58,26 +57,27 @@ body{
 }
 
 .price {
-  font-size: 5rem;
+  font-size: 80px;
   font-weight: bold;
-  border-radius: 10rem;
+  border-radius: 160px;
   background-color: #557FCA;
   color: white;
-  margin-right: 2rem;
-  padding: 3rem 1rem;
+  margin-right: 32px;
+  padding: 48px 16px;
 }
 
 .remove {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
   background-color: #557FCA;
   color: white;
   font-weight: bold;
-  font-size: 10rem;
+  font-size: 160px;
   cursor: pointer;
   border: 1px solid #557FCA;
-  line-height: 5rem;
+  padding: 0 0 !important;
+  line-height: 80px;
 }
 
 .remove.active {
@@ -85,16 +85,17 @@ body{
 }
 
 .add {
-  width: 10rem;
-  height: 10rem;
-  border-radius: 50%;
+  width: 160px;
+  height: 160px;
+  border-radius: 80px;
   background-color: #557FCA;
   color: white;
   font-weight: bold;
-  font-size: 10rem;
+  font-size: 160px;
   cursor: pointer;
   border: 1px solid #557FCA;
-  line-height: 5rem;
+  padding: 0 0 !important;
+  line-height: 80px;
 }
 
 .add.active {
